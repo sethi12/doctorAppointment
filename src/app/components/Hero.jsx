@@ -10,7 +10,7 @@ export default function Hero() {
             <span className="text-teal-300">Our Priority</span>
           </h2>
           <p className="text-xl text-teal-100 mb-8">
-            Book your dental appointment in seconds. Expert care with Dr. Anika Patel in a comfortable, modern clinic.
+            Book your dental appointment in seconds. Expert care with Dr. Archana Sharma in a comfortable, modern clinic.
           </p>
           <a
             href="#book"
