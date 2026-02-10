@@ -39,7 +39,7 @@ export default function ContactPage() {
 
                 <div>
                   <p className="font-semibold text-teal-700 text-xl mb-2">Landmark</p>
-                  <p>Near Naraina Vihar Market / Opposite DDA Sports Complex</p>
+                  <p>Near Car Street Naraina</p>
                 </div>
               </div>
             </div>
