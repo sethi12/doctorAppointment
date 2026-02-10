@@ -21,11 +21,11 @@ export default function SlotSelector({
 
   let available = allSlots.filter((slot) => !booked.includes(slot))
 
-  // If today → remove past slots
-  if (isToday(selectedDate)) {
-    const now = getCurrentTimeHHMM()
-    available = available.filter((slot) => !isSlotInPast(slot, now))
-  }
+// If today → allow ONLY evening slots (4 PM – 8 PM)
+if (isToday(selectedDate)) {
+  available = available.filter((slot) => slot >= '16:00')
+}
+
 
   const isCurrentDay = isToday(selectedDate)
 

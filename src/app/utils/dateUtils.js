@@ -45,6 +45,8 @@
 // export function isSlotInPast(slotHHMM, currentHHMM) {
 //   return slotHHMM < currentHHMM
 // }
+
+
 // app/utils/dateUtils.js
 
 export function generateSlots() {
@@ -68,6 +70,10 @@ export function generateSlots() {
 
   return slots
 }
+export function isEveningSlot(slotHHMM) {
+  return slotHHMM >= '16:00'
+}
+
 
 export function getBookedTimes(date, bookings) {
   if (!bookings) return []
@@ -84,10 +90,18 @@ export function formatTime12(time24) {
   return `${hour12}:${m.toString().padStart(2, '0')} ${period}`
 }
 
-export function isToday(dateString) {
-  const today = new Date().toISOString().split('T')[0]
-  return dateString === today
+export function isToday(dateInput) {
+  if (!dateInput) return false
+
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+
+  const selected = new Date(dateInput)
+  selected.setHours(0, 0, 0, 0)
+
+  return selected.getTime() === today.getTime()
 }
+
 
 export function getCurrentTimeHHMM() {
   const now = new Date()
